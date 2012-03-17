@@ -1,4 +1,4 @@
-require 'cases/helper'
+require 'cases/abstract_unit'
 
 class ChainTest < Test::Unit::TestCase
   def test_is_an_array

@@ -1,4 +1,4 @@
-require 'cases/helper'
+require 'cases/abstract_unit'
 
 class FactoriesTest < Test::Unit::TestCase
   def test_create_feed_entry_filter_chain_creates_a_chain_containing_all_filters_in_the_feed_entry_filters_module

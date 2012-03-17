@@ -1,4 +1,4 @@
-require 'cases/helper'
+require 'cases/abstract_unit'
 
 class FacebookWallTest < Test::Unit::TestCase
   def test_feed_url_returns_the_url_of_the_wall_feed_for_the_specified_page

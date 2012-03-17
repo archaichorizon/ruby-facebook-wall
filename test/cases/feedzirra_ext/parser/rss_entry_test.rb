@@ -1,4 +1,4 @@
-require 'cases/helper'
+require 'cases/abstract_unit'
 
 class RSSEntryTest < Test::Unit::TestCase
   def test_to_hash_returns_a_hash_containing_the_attributes_of_the_entry
