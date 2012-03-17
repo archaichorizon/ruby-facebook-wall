@@ -14,7 +14,7 @@ module FacebookWall
     end
 
     def self.create_posts(feed, feed_entry_filter_chain)
-      feed.entries.collect do |entry|
+      feed.items.collect do |entry|
         entry_clone = entry.clone  #TODO Remove this?
         feed_entry_filter_chain.apply_filters_to! entry_clone
         FacebookWall::Post.new(entry_clone)

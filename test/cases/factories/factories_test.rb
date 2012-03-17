@@ -19,18 +19,18 @@ class FactoriesTest < Test::Unit::TestCase
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
   <channel>
-    <title>Archaic Horizon&apos;s Facebook Wall</title>
-    <link>http://www.facebook.com/</link>
-    <description>Archaic Horizon&apos;s Facebook Wall</description>
+    <title>Channel title</title>
+    <link>http://example.com/</link>
+    <description>Channel description</description>
     <item>
-      <title><![CDATA[Title 1]]></title>
-      <link>http://www.facebook.com/archaichorizon/posts/1</link>
-      <description><![CDATA[Description 1]]></description>
+      <title><![CDATA[Item 1 title]]></title>
+      <link>http://example.com/blog_posts/1</link>
+      <description><![CDATA[Item 1 description]]></description>
     </item>
     <item>
-      <title><![CDATA[Title 2]]></title>
-      <link>http://www.facebook.com/archaichorizon/posts/2</link>
-      <description><![CDATA[Description 2]]></description>
+      <title><![CDATA[Item 2 title]]></title>
+      <link>http://example.com/blog_posts/2</link>
+      <description><![CDATA[Item 2 description]]></description>
     </item>
   </channel>
 </rss>
@@ -45,15 +45,8 @@ END
     assert_equal 2, posts.length
     posts.each{|post| assert post.instance_of?(FacebookWall::Post)}
 
-    assert_equal(
-      {'title' => 'Title 1', 'url' => 'http://www.facebook.com/archaichorizon/posts/1', 'summary' => 'Description 1'},
-      posts.first.to_hash
-    )
-
-    assert_equal(
-      {'title' => 'Title 2', 'url' => 'http://www.facebook.com/archaichorizon/posts/2', 'summary' => 'Description 2'},
-      posts.last.to_hash
-    )
+    assert posts.first.feed_entry.eql?(create_feed_entry('title' => 'Item 1 title', 'link' => 'http://example.com/blog_posts/1', 'description' => 'Item 1 description'))
+    assert posts.last.feed_entry.eql?(create_feed_entry('title' => 'Item 2 title', 'link' => 'http://example.com/blog_posts/2', 'description' => 'Item 2 description'))
 
     feed_entry_filter_chain = FacebookWall::FeedEntryFilters::Chain.new
     feed_entry_filter_chain << FactoriesTestDoubles::FeedEntryFilter01.new()
@@ -64,28 +57,21 @@ END
     assert_equal 2, posts.length
     posts.each{|post| assert post.instance_of?(FacebookWall::Post)}
 
-    assert_equal(
-      {'title' => 'Title 1', 'url' => 'http://www.facebook.com/archaichorizon/posts/1', 'summary' => 'Description 1 foo bar'},
-      posts.first.to_hash
-    )
-
-    assert_equal(
-      {'title' => 'Title 2', 'url' => 'http://www.facebook.com/archaichorizon/posts/2', 'summary' => 'Description 2 foo bar'},
-      posts.last.to_hash
-    )
+    assert posts.first.feed_entry.eql?(create_feed_entry('title' => 'Item 1 title', 'link' => 'http://example.com/blog_posts/1', 'description' => 'Item 1 description foo bar'))
+    assert posts.last.feed_entry.eql?(create_feed_entry('title' => 'Item 2 title', 'link' => 'http://example.com/blog_posts/2', 'description' => 'Item 2 description foo bar'))
   end
 end
 
 module FactoriesTestDoubles
   class FeedEntryFilter01 < FacebookWall::FeedEntryFilters::FeedEntryFilter
     def apply!(feed_entry)
-      feed_entry.summary << ' foo'
+      feed_entry.description << ' foo'
     end
   end
   
   class FeedEntryFilter02 < FacebookWall::FeedEntryFilters::FeedEntryFilter
     def apply!(feed_entry)
-      feed_entry.summary << ' bar'
+      feed_entry.description << ' bar'
     end
   end
 end

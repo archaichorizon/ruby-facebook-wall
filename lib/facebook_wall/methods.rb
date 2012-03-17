@@ -4,7 +4,7 @@ module FacebookWall
   end
 
   def self.posts(id)
-    feed = Feedzirra::Feed.fetch_and_parse feed_url(id)
+    feed = RSS::Parser.fetch_and_parse feed_url id
     Factories::create_posts feed, Factories::create_feed_entry_filter_chain
   end
 end

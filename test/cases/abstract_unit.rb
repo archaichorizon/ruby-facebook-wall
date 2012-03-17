@@ -6,11 +6,11 @@ $:.unshift(lib) unless $:.include?('lib') || $:.include?(lib)
 require 'facebook_wall'
 
 def create_feed(xml)
-  Feedzirra::Feed.parse(xml){}
+  RSS::Parser.parse xml
 end
 
 def create_feed_entry(attributes = {})
-  feed_entry = Feedzirra::Parser::RSSEntry.new
+  feed_entry = RSS::Rss::Channel::Item.new
 
   attributes.each do |name, value|
     feed_entry.send("#{name}=", value)

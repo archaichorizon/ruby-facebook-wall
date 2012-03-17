@@ -2,9 +2,9 @@ module FacebookWall
   module FeedEntryFilters
     class Paragraphizer < FeedEntryFilter
       def apply!(feed_entry)
-        plain_paragraphs = Paragraphizer.normalize_line_breaks(feed_entry.summary).split(/(?:<br\/>\s*){2,}/)
+        plain_paragraphs = Paragraphizer.normalize_line_breaks(feed_entry.description).split(/(?:<br\/>\s*){2,}/)
         paragraphized = plain_paragraphs.collect{|plain_paragraph| "<p>#{plain_paragraph}</p>"}.join
-        feed_entry.summary = paragraphized
+        feed_entry.description = paragraphized
       end
 
       private

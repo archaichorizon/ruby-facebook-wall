@@ -9,10 +9,10 @@ class PostTest < Test::Unit::TestCase
   end
 
   def test_decorates_the_feed_entry
-    feed_entry = create_feed_entry 'title' => 'Foo', 'summary' => 'Bar baz bip'
+    feed_entry = create_feed_entry 'title' => 'Foo', 'description' => 'Bar baz bip'
     post = FacebookWall::Post.new feed_entry
 
     assert_same feed_entry.title, post.title
-    assert_same feed_entry.summary, post.summary
+    assert_same feed_entry.description, post.description
   end
 end
