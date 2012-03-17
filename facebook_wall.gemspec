@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Dan Bettles"]
   s.email       = ["dan@archaichorizon.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Quickly fetches the latest wall posts for a Facebook page without having to log in}
+  s.description = %q{Quickly fetches the latest wall posts for a Facebook page without having to log in.  Instead, the gem fetches and processes the page's RSS feed.  The markup in posts is filtered to ensure standards-compliance and prevent errors when inserted into your own pages.}
 
   s.rubyforge_project = "facebook_wall"
 
