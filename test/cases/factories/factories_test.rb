@@ -36,7 +36,7 @@ class FactoriesTest < Test::Unit::TestCase
 </rss>
 END
 
-    feed = create_feed(feed_xml)
+    feed = create_feed feed_xml
 
     feed_entry_filter_chain = FacebookWall::FeedEntryFilters::Chain.new
     posts = FacebookWall::Factories::create_posts feed, feed_entry_filter_chain
@@ -73,11 +73,6 @@ END
       {'title' => 'Title 2', 'url' => 'http://www.facebook.com/archaichorizon/posts/2', 'summary' => 'Description 2 foo bar'},
       posts.last.to_hash
     )
-  end
-
-  #TODO Add to a test helper module?
-  def create_feed(xml)
-    Feedzirra::Feed.parse(xml){}
   end
 end
 

@@ -20,17 +20,6 @@ class ChainTest < Test::Unit::TestCase
 
     assert_equal 'Description foo bar', feed_entry.summary
   end
-
-  #TODO Add to a test helper module
-  def create_feed_entry(attributes)
-    feed_entry = Feedzirra::Parser::RSSEntry.new
-
-    attributes.each do |name, value|
-      feed_entry.send("#{name}=", value)
-    end
-
-    feed_entry
-  end
 end
 
 #TODO Write blog post about this
