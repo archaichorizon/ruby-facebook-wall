@@ -1,4 +1,4 @@
-require 'cases/abstract_unit'
+require 'abstract_unit'
 
 class ParserTest < Test::Unit::TestCase
   def test_fetch_and_parse_fetches_and_parses_the_feed_at_the_specified_url

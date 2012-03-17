@@ -1,4 +1,4 @@
-require 'cases/abstract_unit'
+require 'abstract_unit'
 
 class ParagraphizerTest < Test::Unit::TestCase
   def test_is_a_feed_entry_filter

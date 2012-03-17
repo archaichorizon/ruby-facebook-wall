@@ -1,4 +1,4 @@
-require 'cases/abstract_unit'
+require 'abstract_unit'
 
 class FeedEntryFilterTest < Test::Unit::TestCase
   def test_has_an_instance_method_called_apply

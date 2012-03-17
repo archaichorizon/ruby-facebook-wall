@@ -1,4 +1,4 @@
-require 'cases/abstract_unit'
+require 'abstract_unit'
 
 class ItemTest < Test::Unit::TestCase
   def test_eql_returns_true_if_the_specified_object_is_an_item_with_the_same_value

@@ -1,4 +1,4 @@
-require 'cases/abstract_unit'
+require 'abstract_unit'
 
 class PostTest < Test::Unit::TestCase
   def test_is_initialized_with_a_feed_entry
