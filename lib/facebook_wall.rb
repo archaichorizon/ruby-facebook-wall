@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'rss/2.0'
-require 'cgi'
 
 require 'facebook_wall/std_lib_ext'
 require 'facebook_wall/methods'
