@@ -1,12 +1,12 @@
-= FacebookWall
+= facebook_wall
 
-FacebookWall is a very simple library that fetches the latest wall-posts for a Facebook page without having to log in -
+facebook_wall is a very simple library that fetches the latest wall-posts for a Facebook page without having to log in -
 wall posts are taken from the page's RSS feed.  The markup in posts is filtered to help ensure standards-compliance and
 prevent errors when inserted into your own Web pages.
 
 == Requirements
 
-FacebookWall was written and tested on Ruby 1.9.2 but is likely to work on other versions.  It requires no 3rd-party
+facebook_wall was written and tested on Ruby 1.9.2 but is likely to work on other versions.  It requires no 3rd-party
 libraries - it uses the open-uri and RSS libs from the Standard Library.
 
 == Installation
