@@ -6,7 +6,7 @@ class FacebookWallTest < Test::Unit::TestCase
   end
 
   def test_posts_returns_an_array_of_posts
-    posts = FacebookWall::posts 260041833284
+    posts = FacebookWall::posts_by 260041833284
     assert posts.instance_of?(Array)
     assert posts.length > 0
     assert posts.first.instance_of?(FacebookWall::Post)

@@ -22,12 +22,12 @@ The following example prints the latest wall-post from
 
   require 'facebook_wall'
 
-  facebook_wall_posts = FacebookWall::posts 260041833284
+  facebook_wall_posts = FacebookWall::posts_by 260041833284
   latest_wall_post = facebook_wall_posts.first
 
   puts latest_wall_post.description
 
-<tt>FacebookWall::posts</tt> returns an <tt>Array</tt> containing instances of <tt>FacebookWall::Post</tt>.
+<tt>FacebookWall::posts_by</tt> returns an <tt>Array</tt> containing instances of <tt>FacebookWall::Post</tt>.
 <tt>FacebookWall::Post</tt> decorates <tt>RSS::Rss::Channel::Item</tt>, which means you can easily access all
 sub-elements of <tt>item</tt>s published in a page's feed.
 For example:
