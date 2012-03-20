@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = FacebookWall::VERSION
   s.authors     = ["Dan Bettles"]
   s.email       = ["dan@archaichorizon.com"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.homepage    = "http://www.archaichorizon.com/"
+  s.summary     = %q{facebook_wall is a very simple library that fetches the latest wall-posts for a Facebook page without having to log in - wall posts are taken from the page's RSS feed.}
+  s.description = %q{facebook_wall is a very simple library that fetches the latest wall-posts for a Facebook page without having to log in - wall posts are taken from the page's RSS feed.  The markup in posts is filtered to help ensure standards-compliance and prevent errors when inserted into your own Web pages.}
 
   s.rubyforge_project = "facebook_wall"
 
@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  s.add_runtime_dependency "feedzirra", '~> 0.0.31'
+  #s.add_runtime_dependency 'feedzirra', '~> 0.1.3'
 end

@@ -1,0 +1,1 @@
+require 'facebook_wall/std_lib_ext/rss/parser'
