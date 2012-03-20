@@ -13,6 +13,10 @@ libraries - it uses the open-uri and RSS libs from the Standard Library.
 
 Using Bundler:
 
+  gem 'facebook_wall'
+
+or:
+
   gem 'facebook_wall', :git => 'git://github.com/archaichorizon/ruby-facebook-wall.git'
 
 == Usage
