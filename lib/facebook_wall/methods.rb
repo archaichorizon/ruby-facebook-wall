@@ -1,6 +1,6 @@
 module FacebookWall
   def self.feed_url(id)
-    "http://www.facebook.com/feeds/page.php?id=#{id}&format=rss20"
+    "http://www.facebook.com/feeds/page.php?id=#{id.to_s}&format=rss20"
   end
 
   def self.posts_by(id)
