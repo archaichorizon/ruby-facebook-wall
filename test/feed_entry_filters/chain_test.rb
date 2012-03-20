@@ -22,7 +22,7 @@ class ChainTest < Test::Unit::TestCase
   end
 end
 
-#TODO write a blog post about this
+#TODO Blog post
 module ChainTestDoubles
   class FeedEntryFilter01 < FacebookWall::FeedEntryFilters::FeedEntryFilter
     def apply!(feed_entry)
